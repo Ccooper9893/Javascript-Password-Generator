@@ -2,7 +2,10 @@
 
 ## Description
 - Use Javascript to develop a random password generator that prompts the user the length and if they want to include symbols,
-lowercase letters, uppercase letters, and numbers.
+lowercase letters, uppercase letters, and numbers. 
+- What I have learned from this challenge is Javascript coding including the use of variables, prompts/confirms, for/while loops, if statements, Math.random/Math.floor, .push(), .join(), parseInt function, NaN property, length property, nested arrays, and functions.
+- The most difficult part of this challenge is the randomizing of nested arrays. One bug that I am still encountering includes having a minimum of at least 1 of each type of character in the generated password.
+
 
 ## Ordered Steps of completion
 - Step 1: Prompt the user to input how long they want their password and save as variable.
@@ -12,6 +15,7 @@ lowercase letters, uppercase letters, and numbers.
 - Step 5: Use for loop to push requested amount of random characters from array into password array.
 - Step 6: Convert password array into string.
 - Step 7: Return randomly generated password.
+
 
 ## User Story
 - AS AN employee with access to sensitive data
@@ -35,11 +39,22 @@ lowercase letters, uppercase letters, and numbers.
 - WHEN the password is generated
 - THEN the password is either displayed in an alert or written to the page
 
+## Links
+- Github Repository: https://github.com/Ccooper9893/Javascript-Password-Generator.git
+- Deployed Webpage: https://ccooper9893.github.io/Javascript-Password-Generator/
+- Original starter code: https://github.com/coding-boot-camp/friendly-parakeet.git
+
+## Usage
+    A website that takes in perimeters chosen by the user to generate a random password that can include 
+    numbers, symbols, lowercase letters, and uppercase letters. Also, the user can choose a password between 8 and 128
+    characters.
+
+## Websites Used
+- W3 Schools: https://www.w3schools.com/
+- Youtube: https://youtube.com/
+- Discord: The Nerd Corner
+
+
 ## Screenshots of Working Page
 <img src="Develop\assets\PasswordGenerator.png" alt="Screenshot of password generator flexibility.">
 
-## Links
-
-- Github Repository: 
-- Deployed Webpage: 
-- Original starter code: 
