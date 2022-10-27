@@ -6,18 +6,21 @@
 //Step 5: Use for loop to grab requested amount of !random characters from request array
 //Step 6: Return randomly generated password.
 
+
+
+
 // Assignment code here
 function generatePassword () {
 
   //Asks user how long they want their password.
   var userInput = window.prompt("How many characters would you like your password to be? Must be between 8 and 128.");
   
-   //Checking if userInput is a number and its between 8 and 128.
+  //Checking if userInput is a number and its between 8 and 128.
   while (isNaN(userInput) || parseInt(userInput) < 8 || parseInt(userInput) > 128) {
     userInput = window.prompt('Please enter a valid number between 8 and 128!');
   }
   
-   //Changes userinput from a string to an integer.
+  //Changes userinput from a string to an integer.
   userInput = parseInt(userInput);
 
   //Creates variables for password to include if user chooses.
@@ -37,7 +40,7 @@ function generatePassword () {
   var userUppercase = window.confirm('Would you like to use Uppercase Letters?');
   var userSymbols = window.confirm('Would you like to use Symbols?');
 
-  //Creates userBasket that will include arrays chosen from prompts.
+  //Creates user Basket that will include arrays chosen from prompts.
   var userBasket = [];
 
   //Adds arrays to userBasket based off user choices.
@@ -57,18 +60,36 @@ function generatePassword () {
     userBasket.push(symbols);
   }
 
-  //Need help figuring out how to combine the nested arrays within userBasket to one array.
+  passwordArray = [];
+
+  //Random number for length of userBasket
+  function rand1 () {
+    randNum1 = Math.floor(Math.random()*userBasket.length);
+    return randNum1;
+  }
+
+  //Random number for nested arrays within userBasket
+  function rand2 () {
+    randNum2 = Math.floor(Math.random()*(userBasket[rand1()].length-1));
+    return randNum2;
+  }
+  //For loop to generate random characters using function rand1 and rand2.
+  for (i=0; i<userInput; i++) { 
+    passwordArray.push(userBasket[rand1()][rand2()]);
+  }
+
+  console.log(passwordArray);
+
+  // for (i=0; i<userBasket.length; i++) {
+  //   console.log(rand1);
+  // }
+  //Lets mess with some random numbers combined with arrays!
 
   //Checking if function is working
-  console.log(userBasket.length);
-  console.log(userBasket);
-  console.log(userInput);
-
 
 
 
 } 
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate"); //Assigns html id "generate" to generateBtn variable.
@@ -84,3 +105,7 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); //When generateBtn is "clicked" call the writePassword function.
+
+//Combines all nested arrays into one
+// var combineBasket = userBasket.flat(Infinity);
+  // console.log(combineBasket);
