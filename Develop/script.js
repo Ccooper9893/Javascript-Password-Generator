@@ -2,12 +2,10 @@
 //Step 1: Prompt the user to input how long they want their password and save as variable.
 //Step 2: Check the variable to make sure its a number and fits the guideline of 8-128 characters.
 //Step 3: Prompt the user to ask if they want numbers, lowercase letters, uppercase letters, and symbols. Save as variables.
-//Step 4: Push requested arrays in individial user request array.
-//Step 5: Use for loop to grab requested amount of !random characters from request array
-//Step 6: Return randomly generated password.
-
-
-
+//Step 4: Push requested arrays in individial user request array if true.
+//Step 5: Use for loop to push requested amount of random characters from array into password array.
+//Step 6: Convert password array into string.
+//Step 7: Return randomly generated password.
 
 // Assignment code here
 function generatePassword () {
@@ -24,10 +22,10 @@ function generatePassword () {
   userInput = parseInt(userInput);
 
   //Creates variables for password to include if user chooses.
-  var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9']; 
+  var numbers = ['0','1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5']; 
   var lowercaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   var uppercaseLetters = [];
-  var symbols = ['?', '!', '@', '#', '$', '%', '&', '*', '+'];
+  var symbols = ['?', '!', '@', '#', '$', '%', '&', '*', '+', '`', '^', ':', '~', '<', '>', '-', '|', ',', '.', '{', '}', '[', ']', '{', '}', '_'];
 
   //Converts lowercase letters to uppercase and adds them to new array.
   for (i=0; i<lowercaseLetters.length; i++) {
@@ -36,9 +34,9 @@ function generatePassword () {
 
   //Prompts user choose properties of password.
   var userNumbers = window.confirm('Would you like to include Numbers?');
-  var userLowercase = window.confirm('Would you like to use Lowercase Letters?');
-  var userUppercase = window.confirm('Would you like to use Uppercase Letters?');
-  var userSymbols = window.confirm('Would you like to use Symbols?');
+  var userLowercase = window.confirm('Would you like to include lowercase letters?');
+  var userUppercase = window.confirm('Would you like to include Uppercase letters?');
+  var userSymbols = window.confirm('Would you like to include Symbols?');
 
   //Creates user Basket that will include arrays chosen from prompts.
   var userBasket = [];
@@ -73,21 +71,17 @@ function generatePassword () {
     randNum2 = Math.floor(Math.random()*(userBasket[rand1()].length-1));
     return randNum2;
   }
+
   //For loop to generate random characters using function rand1 and rand2.
   for (i=0; i<userInput; i++) { 
     passwordArray.push(userBasket[rand1()][rand2()]);
   }
 
-  console.log(passwordArray);
-
-  // for (i=0; i<userBasket.length; i++) {
-  //   console.log(rand1);
-  // }
-  //Lets mess with some random numbers combined with arrays!
-
-  //Checking if function is working
-
-
+  //Converting the passwordArray into a string
+  password = passwordArray.join("");
+  
+  //Returning the random password
+  return password;
 
 } 
 
@@ -106,6 +100,6 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); //When generateBtn is "clicked" call the writePassword function.
 
-//Combines all nested arrays into one
+//Combines all nested arrays into one (Future Reference)
 // var combineBasket = userBasket.flat(Infinity);
   // console.log(combineBasket);
