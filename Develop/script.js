@@ -72,17 +72,17 @@ function generatePassword () {
     return randNum2;
   }
 
+
   //For loop to generate random characters using function rand1 and rand2.
   for (i=0; i<userInput; i++) { 
     passwordArray.push(userBasket[rand1()][rand2()]);
   }
-
+  
   //Converting the passwordArray into a string
   password = passwordArray.join("");
   
   //Returning the random password
-  return password;
-
+   return password;
 } 
 
 // Get references to the #generate element
@@ -94,7 +94,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password"); //Assigns html id "password" to passwordText variable
 
   passwordText.value = password; //Prints password to user.
-
 }
 
 // Add event listener to generate button
