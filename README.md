@@ -4,7 +4,6 @@
 - Use Javascript to develop a random password generator that prompts the user the length and if they want to include symbols,
 lowercase letters, uppercase letters, and numbers. 
 - What I have learned from this challenge is Javascript coding including the use of variables, prompts/confirms, for/while loops, if statements, Math.random/Math.floor, .push(), .join(), parseInt function, NaN property, length property, nested arrays, and functions.
-- The most difficult part of this challenge is the randomizing of nested arrays. One bug that I am still encountering includes having a minimum of at least 1 of each type of character in the generated password.
 
 
 ## Ordered Steps of completion
